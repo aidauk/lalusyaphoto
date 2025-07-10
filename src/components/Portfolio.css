@@ -1,0 +1,139 @@
+.portfolio {
+  padding: 4rem 0 3rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio h2 {
+  margin-bottom: 2rem;
+}
+
+.portfolio-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-tabs button {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.portfolio-tabs button.active,
+.portfolio-tabs button:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.portfolio-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 320px;
+}
+
+.portfolio-arrow {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 2.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  z-index: 2;
+  user-select: none;
+}
+
+.portfolio-arrow:hover, .portfolio-arrow:focus {
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 50%;
+  transform: scale(1.15);
+}
+
+.swiper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.portfolio-slide-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.portfolio-slide-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 32px rgba(255,77,77,0.18);
+}
+
+.portfolio-placeholder {
+  color: #888;
+  font-size: 1.2rem;
+  padding: 2rem;
+  border: 1px dashed #444;
+  border-radius: 1rem;
+  background: #111;
+}
+
+.portfolio-gallery {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-gallery img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.portfolio-gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 32px rgba(255,77,77,0.18);
+}
+
+@media (max-width: 800px) {
+  .portfolio {
+    padding: 2rem 0 2rem 0;
+  }
+  .portfolio-tabs {
+    gap: 0.5rem;
+  }
+  .portfolio-placeholder {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .portfolio-gallery img {
+    width: 120px;
+    height: 160px;
+  }
+  .portfolio-gallery {
+    gap: 0.7rem;
+  }
+  .portfolio-slide-img {
+    height: 180px;
+  }
+  .swiper {
+    max-width: 98vw;
+  }
+} 
