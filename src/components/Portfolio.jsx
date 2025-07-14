@@ -28,6 +28,7 @@ const portfolioData = [
       'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80', // клубника
+      '/images/food-custom.jpg', // пользовательское фото
     ]
   },
   {
