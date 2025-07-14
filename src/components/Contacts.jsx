@@ -1,34 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contacts.css';
 
-const TelegramIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign:'middle',marginRight:'0.5em'}}>
-    <path d="M21.75 3.75L2.25 10.5l5.25 2.25L18 7.5l-7.5 7.5v3l3-2.25 4.5 3.75 3.75-15z" fill="#229ED9"/>
-  </svg>
-);
-const InstagramIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign:'middle',marginRight:'0.5em'}}>
-    <rect x="2" y="2" width="20" height="20" rx="6" fill="#fff" stroke="#FF4D4D" strokeWidth="2"/>
-    <circle cx="12" cy="12" r="5" stroke="#FF4D4D" strokeWidth="2"/>
-    <circle cx="17" cy="7" r="1.2" fill="#FF4D4D"/>
-  </svg>
-);
+const Contacts = () => {
+  const [form, setForm] = useState({ name: '', phone: '', message: '' });
+  const [sent, setSent] = useState(false);
 
-const Contacts = () => (
-  <section className="contacts" id="contacts">
-    <h2>Контакты</h2>
-    <div className="contacts-info">
-      <div>
-        <p>Uzbekistan,<br/>Tashkent</p>
-        <p><a href="tel:+998901234567">+998 90 123-45-67</a></p>
-        <p><a href="mailto:Sheralievalaura1998@gmail.com">Sheralievalaura1998@gmail.com</a></p>
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setSent(true);
+    // Здесь можно добавить отправку данных на сервер
+  };
+
+  const handleReset = () => {
+    setForm({ name: '', phone: '', message: '' });
+    setSent(false);
+  };
+
+  return (
+    <section className="contacts">
+      <h2 className="contacts-title">Контакты</h2>
+      <div className="custom-form compact-form">
+        <div className="custom-form-top">
+          <div className="custom-form-title">ЗАПИШИТЕСЬ<br/>НА СЪЁМКУ</div>
+          <div className="custom-form-desc">
+            Оставьте свои данные — я свяжусь с вами для уточнения деталей и подбора времени.
+          </div>
+        </div>
+        {sent ? (
+          <div className="contacts-form-success">Спасибо! Ваше сообщение отправлено.</div>
+        ) : (
+          <form className="custom-form-fields" onSubmit={handleSubmit} onReset={handleReset}>
+            <div className="custom-form-row">
+              <input
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Телефон"
+                value={form.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Ваше сообщение"
+              value={form.message}
+              onChange={handleChange}
+              required
+            />
+            <div className="custom-form-row">
+              <button type="submit">ОТПРАВИТЬ</button>
+              <button type="reset" className="custom-form-reset">ОЧИСТИТЬ</button>
+            </div>
+          </form>
+        )}
       </div>
-      <div className="contacts-socials">
-        <a href="https://t.me/lalusyaphoto" target="_blank" rel="noopener noreferrer"><TelegramIcon />Telegram ↗</a>
-        <a href="https://www.instagram.com/lalusya.photo/" target="_blank" rel="noopener noreferrer"><InstagramIcon />Instagram ↗</a>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Contacts; 

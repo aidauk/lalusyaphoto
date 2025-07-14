@@ -1,0 +1,38 @@
+.steps {
+  padding: 60px 0 40px 0;
+  background: #fff;
+  text-align: left;
+}
+.steps h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+}
+.steps-intro {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #444;
+  opacity: 0.9;
+}
+.steps-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.steps-table th, .steps-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+.steps-table th {
+  background: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.steps-table tr:last-child td {
+  border-bottom: none;
+} 
